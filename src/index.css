@@ -1,13 +1,121 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: IRANSans;
+  src: url("../src/fonts/IRANSans/IRANSans.ttf");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: IRANSansNum;
+  src: url("../src/assets/fonts/IRANSansNum/IRANSans(FaNum).ttf");
+}
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: IRANSans;
+
+  direction: rtl;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.horizontal-scroll-wrapper {
+  width: 100px;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.horizontal-scroll-wrapper > div {
+  width: 100px;
+  height: 100px;
+}
+
+.horizontal-scroll-wrapper {
+  transform: rotate(-90deg);
+  transform-origin: right top;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  /* background-color: #ccc; */
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: white;
+}
+
+.box-slider {
+  position: absolute; 
+   top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid red;
+  outline:none;
+
+
+  border-radius: 10px;
+  transition: border-radius 0.8s  ease-in-out;
+  transition: border 0.8s  ease-in-out;
+
+
+ 
 }

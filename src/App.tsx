@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import WebLayOut from "./Components/WebLayOut";
+import Login from "./Components/Login";
+import Confrim from "./Components/Confrim";
+import FurtherInformation from "./Components/FurtherInformation";
+// import OrderFactor from './Components/OrderFactor';
+import Verificationcode from "./Components/Verificationcode";
+import Sms from "./Components/Sms";
+
+import Wallet from "./Components/Wallet";
+
+import "./App.css";
+
+import OrderFactor from "./Components/OrderFactor";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<WebLayOut />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/confrim" element={<Confrim />} />
+      <Route path="/information" element={<FurtherInformation />} />
+      <Route path="/factor" element={<OrderFactor />} />
+      <Route path="/wallet" element={<Wallet />} />
+      <Route path="/verificationcode" element={<Verificationcode />} />
+      <Route path="/sms" element={<Sms />} />
+    </Routes>
   );
 }
 
